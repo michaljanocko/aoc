@@ -1,0 +1,6 @@
+File.stream!("input")
+|> Enum.map(&String.to_integer(String.trim(&1)))
+|> Enum.chunk_every(2, 1, :discard)
+|> Enum.map(fn [a, b] -> a < b end)
+|> Enum.count(& &1)
+|> IO.inspect()

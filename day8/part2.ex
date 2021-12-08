@@ -1,9 +1,3 @@
-# key_by_value = fn map, value ->
-#   map
-#   |> Enum.find(fn {key, val} -> val == value end)
-#   |> elem(0)
-# end
-
 File.stream!("input")
 |> Enum.map(&String.trim/1)
 |> Enum.map(fn line ->
@@ -54,10 +48,6 @@ File.stream!("input")
 
   Enum.map_join(digits, &Map.fetch!(lookupt, &1))
   |> String.to_integer()
-
-  # Enum.reduce(d, 0, fn number, acc ->
-  #   segs = String.graphemes(number)
-  # end)
 end)
 |> Enum.sum()
 |> IO.inspect()
